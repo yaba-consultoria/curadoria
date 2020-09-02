@@ -19,7 +19,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@Table(name = "localidade_table")
+@Table(name = "projeto_table")
 public class Projeto extends EntidadeBase{
 
     private String titulo;
