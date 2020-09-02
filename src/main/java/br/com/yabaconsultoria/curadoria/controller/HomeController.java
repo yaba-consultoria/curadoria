@@ -2,7 +2,6 @@ package br.com.yabaconsultoria.curadoria.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Lucas Copque
@@ -12,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class HomeController {
 
-    @GetMapping("/hello")
-    public String helloWorld(){
-        return "index";
+    @GetMapping("/")
+    public String getHome(){
+        return "home/index";
     }
 }
