@@ -25,7 +25,7 @@ public class AuthController {
     @PostMapping("/login")
     public String postLogin(@RequestParam String email, @RequestParam String senha){
         if(usuarioService.login(email, senha)){
-            return "dashboard";
+            return "redirect:/dashboard";
         }
         return "redirect:/";
     }
