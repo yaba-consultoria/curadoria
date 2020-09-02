@@ -5,9 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 
 /**
  * @author Lucas Copque
@@ -30,6 +28,10 @@ public class Usuario extends EntidadeBase{
     private String senha;
 
     private Boolean admin;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
     public Usuario(){
         admin = false;
