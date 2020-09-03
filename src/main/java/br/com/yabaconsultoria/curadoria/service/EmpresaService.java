@@ -22,6 +22,10 @@ public class EmpresaService {
         this.empresaRepository = empresaRepository;
     }
 
+    public Empresa save(Empresa empresa){
+        return this.empresaRepository.save(empresa);
+    }
+
     public List<Empresa> findAll(){
         return this.empresaRepository.findAll();
     }

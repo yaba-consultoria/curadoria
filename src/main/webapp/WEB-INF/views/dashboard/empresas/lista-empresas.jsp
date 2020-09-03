@@ -33,7 +33,6 @@
 
     <!-- Sidebar -->
     <c:import url="/WEB-INF/views/componentes/sidebar/dashboard-sidebar.jsp" />
-    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -227,10 +226,19 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">
+            <div class="container-fluid">                
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Empresas</h1>
+                <div class="d-flex flex-row justify-content-between">
+                    
+                    <div>
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">Empresas</h1>                   
+                    </div>
+                    <div>
+                        <!-- Botão Nova Empresa -->
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-empresa">Nova Empresa</button>
+                    </div>
+                </div>
 
                 <!-- DataTales Example -->
                 <c:if test = "${not empty empresas}">
@@ -267,7 +275,25 @@
                       <h4 class="alert-heading">Sem Registros</h4>
                       <p>Não há registros de empresas no servidor.</p>
                     </div>
-                </c:if>
+                </c:if>       
+
+                <c:if test = "${not empty success}"> 
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <!-- Alert Cadastro Empresa -->
+                            <c:import url="/WEB-INF/views/componentes/alert/alert-success.jsp" />
+                        </div>
+                    </div>
+                </c:if>   
+
+                <c:if test = "${not empty danger}"> 
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <!-- Alert Cadastro Empresa -->
+                            <c:import url="/WEB-INF/views/componentes/alert/alert-danger.jsp" />
+                        </div>
+                    </div>
+                </c:if>        
 
             </div>
             <!-- /.container-fluid -->
@@ -296,6 +322,9 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
+<!-- Modal Cadastro Empresa -->
+<c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-empresa.jsp" />
+
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -315,15 +344,22 @@
     </div>
 </div>
 
+
+
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${context}/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="${context}/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
 <script src="${context}/dashboard/js/sb-admin-2.min.js"></script>
+
+<!-- Field Validators-->
+<script src="${context}/dashboard/js/cnpj-validator.js"></script>
+<script src="${context}/dashboard/vendor/jquery-mask/jquery.mask.js"></script>
+<script src="${context}/dashboard/vendor/jquery-mask/mask.js"></script>
 
 <!-- Page level plugins -->
 <script src="${context}/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>

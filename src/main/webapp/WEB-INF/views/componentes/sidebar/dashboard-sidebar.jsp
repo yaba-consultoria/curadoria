@@ -33,6 +33,11 @@
       <i class="fas fa-user-tie"></i>
       <span>Clientes</span></a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="${context}/dashboard/projetos">
+      <i class="fas fa-project-diagram"></i>
+      <span>Projetos</span></a>
+  </li>
 
 </ul>
 <!-- End of Sidebar -->
