@@ -1,11 +1,10 @@
 package br.com.yabaconsultoria.curadoria.service;
 
+import br.com.yabaconsultoria.curadoria.model.Empresa;
 import br.com.yabaconsultoria.curadoria.model.Usuario;
 import br.com.yabaconsultoria.curadoria.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 /**
  * @author Lucas Copque
@@ -22,15 +21,20 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Boolean login(String email, String senha){
-        Optional<Usuario> usuario = findByEmailAndSenha(email, senha);
-        if (usuario.isEmpty()){
-            return false;
-        }
-        return true;
+    public Usuario save(Usuario usuario, Empresa empresa){
+        usuario.setEmpresa(empresa);
+        return this.usuarioRepository.save(usuario);
     }
 
-    private Optional<Usuario> findByEmailAndSenha(String email, String senha){
-        return this.usuarioRepository.findByEmailAndSenha(email, senha);
+    public Boolean existsByEmail(String email){
+        return this.usuarioRepository.existsByEmail(email);
+    }
+
+    public Boolean login(String email, String senha){
+        return this.usuarioRepository.existsByEmailAndSenha(email, senha);
+    }
+
+    public Usuario findByEmail(String email){
+        return this.usuarioRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuário não localizado."));
     }
 }
