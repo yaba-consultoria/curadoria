@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Lucas Copque
@@ -24,6 +25,10 @@ public class EmpresaService {
 
     public Empresa save(Empresa empresa){
         return this.empresaRepository.save(empresa);
+    }
+
+    public Empresa getByCnpj(String cnpj){
+        return this.empresaRepository.findByCnpj(cnpj).orElseThrow(() -> new RuntimeException("Empresa não localizada"));
     }
 
     public List<Empresa> findAll(){
