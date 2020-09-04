@@ -16,7 +16,7 @@
   <link href="${context}/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Fontawesome -->
-  <link href="${context}/home/vendor/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
   <!-- Custom styles for this template -->
   <link href="${context}/home/css/modern-business.css" rel="stylesheet">
@@ -40,7 +40,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
               <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-login">Login</a>
-              <a class="dropdown-item" href="sidebar.html">Registrar-se</a>
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modal-register">Registrar-se</a>
             </div>
           </li>          
         </ul>        
@@ -255,6 +255,7 @@
   <script src="${context}/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <c:import url="/WEB-INF/views/componentes/modal/modal-login.jsp" />
+  <c:import url="/WEB-INF/views/componentes/modal/modal-register.jsp" />  
 
 </body>
 
