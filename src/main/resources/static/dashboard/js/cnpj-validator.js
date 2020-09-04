@@ -1,6 +1,4 @@
 function validarCNPJ(cnpj) {
-
-    console.log('valida cnpj');
          
     cnpj = cnpj.replace(/[^\d]+/g,'');
  
