@@ -33,7 +33,7 @@ public class EmpresaController {
     }
 
     @PostMapping("/dashboard/empresas/cadastro")
-    public String save(Empresa empresa, final RedirectAttributes redirectAttributes){
+    public String postSave(Empresa empresa, final RedirectAttributes redirectAttributes){
         try {
             this.empresaService.save(empresa);
             redirectAttributes.addFlashAttribute("success", "Empresa adicionada com sucesso.");
@@ -45,7 +45,7 @@ public class EmpresaController {
     }
 
     @GetMapping("/dashboard/empresas")
-    public String getListAll(Model model){
+    public String getFindAll(Model model){
         List<Empresa> empresaList = empresaService.findAll();
         model.addAttribute("empresas", empresaList);
         return "dashboard/empresas/lista-empresas";
