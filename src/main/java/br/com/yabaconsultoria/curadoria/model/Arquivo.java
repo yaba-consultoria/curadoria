@@ -24,7 +24,9 @@ public class Arquivo extends EntidadeBase{
 
     private String nome;
 
-    private String url;
+    private String caminhoRelativo;
+
+    private String caminhoAbsoluto;
 
     @Enumerated(EnumType.STRING)
     private TipoArquivo tipo;
