@@ -39,6 +39,10 @@ public class Projeto extends EntidadeBase{
     private String orcamento;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "logo_id")
+    private Arquivo logo;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "analise_projeto_id")
     private AnaliseProjeto analise;
 
