@@ -60,4 +60,9 @@ public class AuthController {
         session.invalidate();
         return "redirect:/";
     }
+
+    @GetMapping("/sessao-expirada")
+    public String sessionExpired(){
+        return "home/sessao-expirada";
+    }
 }
