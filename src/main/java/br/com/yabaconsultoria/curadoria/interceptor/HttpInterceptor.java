@@ -24,7 +24,7 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
         final String uri = request.getRequestURI();
 
         // Uris permitidas sem sessão
-        if(uri.contentEquals("") || uri.contentEquals("/") || uri.contains("/login") || uri.contains("/register")){
+        if(uri.contentEquals("") || uri.contentEquals("/") || uri.contains("/login") || uri.contains("/register") || uri.contains("/sessao-expirada")){
             return true;
         }
 
@@ -43,7 +43,7 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
         // expirada ou inválida.
         else {
             request.getSession().invalidate();
-            response.sendRedirect("/");
+            response.sendRedirect("/sessao-expirada");
             return false;
         }
     }
