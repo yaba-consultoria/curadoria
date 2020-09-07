@@ -14,7 +14,7 @@
                             <div class="form-group">
                                 <label>Foto do Projeto:</label>                                
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" name="logo.anexo" id="img-input" required="required">
+                                  <input type="file" class="custom-file-input" name="logo.anexo" id="img-input" required>
                                   <input type="hidden" name="logo.tipo" value="LOGO">   
                                   <label class="custom-file-label" for="customFile">Selecione o arquivo: (png, jpg, jpeg, bitmap)</label>
                                 </div>
@@ -32,13 +32,13 @@
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label>Título:</label>
-                                <input type="text" class="form-control" name="titulo" placeholder="Nome do Projeto" required="required">     
+                                <input type="text" class="form-control" name="titulo" placeholder="Nome do Projeto" required>     
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label>Proponente:</label>
-                                <input type="text" class="form-control" name="proponente" placeholder="Proponente" required="required"> 
+                                <input type="text" class="form-control" name="proponente" placeholder="Proponente" required> 
                             </div> 
                         </div>  
                     </div>
@@ -47,13 +47,13 @@
                         <div class="col-md-8 col-12">
                             <div class="form-group">
                                 <label>Cidade:</label>
-                                <input type="text" class="form-control" name="localidade.cidade" placeholder="Cidade" required="required">     
+                                <input type="text" class="form-control" name="localidade.cidade" placeholder="Cidade" required>     
                             </div>
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label>Estado:</label>
-                                <select class="form-control" name="localidade.estado" required="required">
+                                <select class="form-control" name="localidade.estado" required>
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
                                     <option value="AP">Amapá</option>
@@ -99,19 +99,19 @@
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label>Beneficiários Direto:</label>
-                                <input type="number" class="form-control" name="beneficiariosDireto" placeholder="Qtd. Beneficiários Direto" required="required">     
+                                <input type="number" class="form-control" name="beneficiariosDireto" placeholder="Qtd. Beneficiários Direto" required>     
                             </div>
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label>Beneficiários Indireto:</label>
-                                <input type="number" class="form-control" name="beneficiariosIndireto" placeholder="Qtd. Beneficiários Indireto" required="required"> 
+                                <input type="number" class="form-control" name="beneficiariosIndireto" placeholder="Qtd. Beneficiários Indireto" required> 
                             </div> 
                         </div>  
                         <div class="col-md-4 col-12">
                             <div class="form-group">
                                 <label>Orçamento:</label>
-                                <input type="text" class="form-control" name="orcamento" id="orcamento" placeholder="R$ 100.000,00" required="required"> 
+                                <input type="text" class="form-control" name="orcamento" id="orcamento" placeholder="R$ 100.000,00" required> 
                             </div> 
                         </div>  
                     </div>
@@ -120,7 +120,7 @@
                         <div class="col-12">    
                              <div class="form-group">
                                 <label>Resumo:</label>
-                                <textarea class="form-control" name="resumo" rows="5" placeholder="Escreva o resumo do projeto em até 2.500 caracteres" maxlength="2500"></textarea>
+                                <textarea class="form-control" name="resumo" rows="5" placeholder="Escreva o resumo do projeto em até 2.500 caracteres" maxlength="2500" required></textarea>
                             </div>   
                         </div>
                     </div>  

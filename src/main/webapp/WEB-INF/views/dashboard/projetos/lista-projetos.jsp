@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Curadoria Yabá Consultoria - Clientes</title>
+    <title>Curadoria Yabá Consultoria - Projetos</title>
 
     <!-- Custom fonts for this template -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -60,24 +60,82 @@
                     </div>
                     <div>
                         <!-- Botão Nova Empresa -->
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-projeto">Nova Projeto</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-projeto">Novo Projeto</button>
                     </div>
                 </div>                
 
                 <!-- Card List -->
-                <c:if test = "${not empty projetos.content}">
+                <c:if test = "${not empty projetos.content}">                    
                     <div class="card shadow mb-4 mt-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Lista de Projetos</h6>
                         </div>
                         <div class="card-body">
-                            <c:forEach var="projeto" items="${projetos.content}">
-                                <div class="card-deck mt-4">
-                                  <div class="col-md-12 col-lg-6 col-xl-4">  
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-start">
+                                  <form action="${context}/dashboard/projetos" class="d-inline-block form-inline mr-5 mw-100 navbar-search" method="get">
+                                    <div class="input-group">
+                                      <input type="text" class="form-control small" name="titulo" placeholder="Pesquisar por título ..." aria-label="Search" aria-describedby="basic-addon2">
+                                      <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                          <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </form>   
+                                  <nav class="" aria-label="Paginação de Projetos">
+                                    <ul class="pagination"> 
+                                      <c:choose> 
+                                        <c:when test = "${projetos.totalPages == 1}">
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
+                                        </c:when>
+                                        <c:when test = "${(projetos.totalPages == 2) && (projetos.number + 1 < projetos.totalPages)}">
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
+                                        </c:when>
+                                        <c:when test = "${(projetos.totalPages == 2) && (projetos.number + 1 == projetos.totalPages)}">
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
+                                        </c:when>
+                                        <c:when test = "${(projetos.totalPages >= 3) && (projetos.number == 0)}">
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 2}&titulo=${titulo}">${projetos.number + 3}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
+                                        </c:when>
+                                        <c:when test = "${(projetos.totalPages >= 3) && (projetos.number > 0) && (projetos.number + 1 < projetos.totalPages)}">
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
+                                        </c:when>
+                                        <c:when test = "${(projetos.totalPages >= 3) && (projetos.number + 1 == projetos.totalPages)}">
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 2}&titulo=${titulo}">${projetos.number - 1}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
+                                          <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
+                                          <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
+                                        </c:when>
+                                      </c:choose> 
+                                    </ul>
+                                  </nav>  
+                                </div>
+                            </div>               
+                            <div class="row">
+                                <c:forEach var="projeto" items="${projetos.content}">
+                                    <div class="card-deck col-md-12 col-lg-6 col-xl-4 mt-4">                                      
                                       <div class="card">
-                                        <img src="${context}/${projeto.logo.caminhoRelativo}" class="card-img-top" alt="logo" style="max-height: 300px;">
+                                        <img src="${context}/${projeto.logo.caminhoRelativo}" class="card-img-top" alt="logo" style="max-height: 260px;">
                                         <div class="card-body">
-                                          <h5 class="card-title">
+                                          <h5 class="card-title font-weight-bold">
                                               <c:choose> 
                                                 <c:when test = "${fn:length(projeto.titulo) > 25}">
                                                   ${fn:substring(projeto.titulo, 0, 25)} ...
@@ -89,8 +147,8 @@
                                           </h5>
                                           <p class="card-text text-justify">
                                               <c:choose> 
-                                                <c:when test = "${fn:length(projeto.titulo) > 80}">
-                                                  ${fn:substring(projeto.resumo, 0, 80)} ...
+                                                <c:when test = "${fn:length(projeto.resumo) > 250}">
+                                                  ${fn:substring(projeto.resumo, 0, 250)} ...
                                                 </c:when>
                                                 <c:otherwise>  
                                                   ${projeto.resumo}
@@ -99,7 +157,7 @@
                                           </p>
                                         </div>
                                         <div class="mb-5 mt-2 d-flex flex-row justify-content-center">                          
-                                          <a href="#" class="btn btn-primary btn-icon-split">
+                                          <a href="${context}/dashboard/projetos/${projeto.id}" class="btn btn-primary btn-icon-split">
                                             <span class="icon text-white-50">
                                               <i class="fas fa-sign-in-alt"></i>
                                             </span>
@@ -107,11 +165,11 @@
                                           </a>
                                         </div>
                                       </div>
-                                  </div>
-                                </div>  
-                            </c:forEach>                     
-                        </div>
-                    </div>
+                                    </div>  
+                                </c:forEach> 
+                            </div>                                   
+                        </div>                        
+                    </div>                    
                 </c:if>
                 <c:if test = "${empty projetos.content}"> 
                     <div class="alert alert-danger mt-4" role="alert">

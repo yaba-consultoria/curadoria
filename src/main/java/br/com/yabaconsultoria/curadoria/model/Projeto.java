@@ -1,6 +1,5 @@
 package br.com.yabaconsultoria.curadoria.model;
 
-import br.com.yabaconsultoria.curadoria.enumerated.LevelEstrela;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
