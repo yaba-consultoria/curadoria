@@ -52,6 +52,10 @@ public class ProjetoService {
         return this.projetoRepository.findAllByTituloContaining(pageable, titulo);
     }
 
+    public void deleteById(Projeto projeto){
+        this.projetoRepository.deleteById(projeto.getId());
+    }
+
     private void update(Projeto projeto){
         this.projetoRepository.save(projeto);
         log.info("Projeto {} atualizado.", projeto.getTitulo());

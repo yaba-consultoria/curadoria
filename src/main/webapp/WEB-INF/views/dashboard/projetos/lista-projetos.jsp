@@ -157,11 +157,17 @@
                                           </p>
                                         </div>
                                         <div class="mb-5 mt-2 d-flex flex-row justify-content-center">                          
-                                          <a href="${context}/dashboard/projetos/${projeto.id}" class="btn btn-primary btn-icon-split">
+                                          <a href="${context}/dashboard/projetos/${projeto.id}" class="btn btn-primary btn-icon-split mx-2">
                                             <span class="icon text-white-50">
                                               <i class="fas fa-sign-in-alt"></i>
                                             </span>
                                             <span class="text">Detalhes</span>
+                                          </a>
+                                          <a href="${context}/dashboard/projetos/excluir/${projeto.id}" class="btn btn-danger btn-icon-split mx-2">
+                                            <span class="icon text-white-50">
+                                              <i class="far fa-times-circle"></i>
+                                            </span>
+                                            <span class="text">Excluir</span>
                                           </a>
                                         </div>
                                       </div>
@@ -223,8 +229,10 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Modal Cadastro Empresa -->
+<!-- Modal Cadastro Projeto -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-projeto.jsp" />
+<!-- Modal Excluir Projeto -->
+<c:import url="/WEB-INF/views/componentes/modal/modal-excluir-projeto.jsp" />
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
