@@ -27,9 +27,10 @@ public interface VotoRepository extends JpaRepository<Voto, Long> {
 
     Boolean existsByUsuarioAndCategoriaAndProjeto(Usuario usuario, Categoria categoria, Projeto projeto);
 
+    void deleteByCategoriaAndProjeto(Categoria categoria, Projeto projeto);
+
     void deleteAllByCategoria(Categoria categoria);
     void deleteAllByUsuarioAndCategoria(Usuario usuario, Categoria categoria);
-    void deleteAllByCategoriaAndProjeto(Categoria categoria, Projeto projeto);
 
     // Queries personalizadas
     
