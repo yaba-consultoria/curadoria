@@ -12,6 +12,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 /**
+ * Classe modelo que contém atributos das análises do projeto
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020
@@ -23,7 +25,7 @@ import javax.persistence.Table;
 @Setter
 @ToString
 @Table(name = "analise_projeto_table")
-public class AnaliseProjeto extends EntidadeBase{
+public class AnaliseProjeto extends EntidadeBase {
 
     @Enumerated(EnumType.STRING)
     private LevelEstrela engajamentoStakeHolders;
@@ -33,5 +35,11 @@ public class AnaliseProjeto extends EntidadeBase{
 
     @Enumerated(EnumType.STRING)
     private LevelEstrela visibilidade;
+
+    public AnaliseProjeto() {
+        this.engajamentoStakeHolders = LevelEstrela.RUIM;
+        this.alinhamentoNegocios = LevelEstrela.RUIM;
+        this.visibilidade = LevelEstrela.RUIM;
+    }
 
 }

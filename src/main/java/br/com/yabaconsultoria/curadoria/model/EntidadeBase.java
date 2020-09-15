@@ -12,6 +12,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
+ * Classe modelo que contém a base de uma entidade para ser persistida na base de dados
+ * ID Incremental base
+ * Hash e Equals base
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020
@@ -26,8 +30,7 @@ public class EntidadeBase implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
-    public EntidadeBase(){
-
+    public EntidadeBase() {
     }
 
     @Override

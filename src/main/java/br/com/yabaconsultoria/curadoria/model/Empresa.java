@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
+ * Classe modelo que contém atributos de uma empresa
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020

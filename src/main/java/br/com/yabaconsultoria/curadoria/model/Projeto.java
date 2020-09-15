@@ -8,6 +8,8 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
 /**
+ * Classe modelo que contém atributos do projeto
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020
@@ -19,7 +21,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Table(name = "projeto_table")
-public class Projeto extends EntidadeBase{
+public class Projeto extends EntidadeBase {
 
     private String titulo;
 
@@ -35,17 +37,25 @@ public class Projeto extends EntidadeBase{
 
     private Integer beneficiariosIndireto;
 
-    private String orcamento;
+    private String valorSolicitado;
+
+    private String valorTotal;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "logo_id")
     private Arquivo logo;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "analise_projeto_id")
     private AnaliseProjeto analise;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "localidade_id")
     private Localidade localidade;
+
+    // Esta variável verifica se o projeto pode ser votado ou não na categoria
+    @Transient
+    private Boolean canVote;
+
+    // esta variável armazena a quantidade de votos que aquele projeto recebeu em uma categoria
+    @Transient
+    private Long totalVotos;
+
 }
