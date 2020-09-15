@@ -1,15 +1,19 @@
 package br.com.yabaconsultoria.curadoria.interceptor;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Classe responsável por interceptar e autorizar o acesso do usuário a cada requisição
+ * Redirecionar para página de sessão expirada, caso não haja uma sessão válida
  * @author Lucas Copque
  * @version 1.0
  * @since 04/09/2020
  */
+@CrossOrigin
 public class HttpInterceptor extends HandlerInterceptorAdapter {
 
 
@@ -23,8 +27,8 @@ public class HttpInterceptor extends HandlerInterceptorAdapter {
         // Recebe a URI que esta sendo acessada
         final String uri = request.getRequestURI();
 
-        // Uris permitidas sem sessão
-        if(uri.contentEquals("") || uri.contentEquals("/") || uri.contains("/login") || uri.contains("/register") || uri.contains("/sessao-expirada")){
+        // URI's permitidas sem sessão
+        if (uri.contentEquals("") || uri.contentEquals("/") || uri.contains("/login") || uri.contains("/register") || uri.contains("/sessao-expirada") || uri.contains("/endpoint")) {
             return true;
         }
 
