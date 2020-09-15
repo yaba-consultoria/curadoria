@@ -58,7 +58,7 @@ public class AuthController {
         } catch (Exception ex) {
             // Dispara modal de exception ao cadastrar usuário
             redirectAttributes.addFlashAttribute("registerDanger", handlerException.buildMessage(ex));
-            log.error("Falha ao cadastrar usuário:{}", handlerException.buildMessage(ex));
+            log.error("Falha ao cadastrar usuário {}", handlerException.buildMessage(ex));
         }
         return "redirect:/";
     }
