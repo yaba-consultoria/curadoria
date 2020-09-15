@@ -10,10 +10,10 @@
     </parent>
     <groupId>br.com.yabaconsultoria</groupId>
     <artifactId>curadoria</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.RELEASE</version>
     <packaging>war</packaging>
     <name>curadoria</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Curadoria - Yabá Consultoria: Projeto Maven, utilizando as tecnologias do Ecossistema Spring Boot, Spring Data JPA, Hibernate, MySQL e Lombok. Arquitetura Server-Side utilizando framework JSP</description>
 
     <properties>
         <java.version>11</java.version>
