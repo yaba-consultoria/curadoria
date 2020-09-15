@@ -58,7 +58,7 @@ public class AuthController {
         } catch (Exception ex) {
             // Dispara modal de exception ao cadastrar usuário
             redirectAttributes.addFlashAttribute("registerDanger", handlerException.buildMessage(ex));
-            log.warn("Falha ao cadastrar usuário:{}", handlerException.buildMessage(ex));
+            log.error("Falha ao cadastrar usuário:{}", handlerException.buildMessage(ex));
         }
         return "redirect:/";
     }
@@ -87,7 +87,7 @@ public class AuthController {
         } catch (Exception ex) {
             // Dispara modal de exception ao efetuar login
             redirectAttributes.addFlashAttribute("loginIncorrect", handlerException.buildMessage(ex));
-            log.warn("Falha ao efetuar login: {}", handlerException.buildMessage(ex));
+            log.error("Falha ao efetuar login: {}", handlerException.buildMessage(ex));
             return "redirect:/";
         }
     }
@@ -103,7 +103,7 @@ public class AuthController {
         try {
             this.sessionService.logout(request);
         } catch (Exception ex){
-            log.warn("Falha ao efetuar logoff: {}", handlerException.buildMessage(ex));
+            log.error("Falha ao efetuar logoff: {}", handlerException.buildMessage(ex));
         }
         return "redirect:/";
     }
