@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
+ * Classe de serviço para local storage de arquivos
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 04/09/2020
@@ -20,16 +22,19 @@ public class LocalStorageService implements Serializable {
 
     private String ABSOLUTE_PATH = null;
 
+    /**
+     * Método que realiza upload do arquivo em ambiente local
+     *
+     * @param request Objeto que contém informações da request
+     * @param arquivo Arquivo que será salvo em ambiente local
+     */
     public void upload(HttpServletRequest request, Arquivo arquivo) {
-
         ABSOLUTE_PATH = request.getServletContext().getRealPath(arquivo.getCaminhoRelativo());
-
         if (!new File(ABSOLUTE_PATH).exists()) {
             new File(ABSOLUTE_PATH).mkdirs();
             arquivo.setCaminhoAbsoluto(ABSOLUTE_PATH + "/" + arquivo.getNome());
             arquivo.setCaminhoRelativo(arquivo.getCaminhoRelativo() + "/" + arquivo.getNome());
         }
-
         try {
             arquivo.getAnexo().transferTo(new File(arquivo.getCaminhoAbsoluto()));
             log.info("Arquivo salvo: " + arquivo.getCaminhoAbsoluto());
@@ -38,7 +43,12 @@ public class LocalStorageService implements Serializable {
         }
     }
 
-    public void deletar(HttpServletRequest request, Arquivo arquivo) {
+    /**
+     * Método que deleta o arquivo em ambiente local
+     *
+     * @param arquivo Arquivo que será deletado
+     */
+    public void delete(Arquivo arquivo) {
         ABSOLUTE_PATH = arquivo.getCaminhoAbsoluto();
         File file = new File(ABSOLUTE_PATH);
         if (file.exists()) {
