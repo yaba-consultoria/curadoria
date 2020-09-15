@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
+ * Classe de serviço para os métodos do usuário
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020
@@ -17,24 +19,49 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     @Autowired
-    public UsuarioService(UsuarioRepository usuarioRepository){
+    public UsuarioService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario save(Usuario usuario, Empresa empresa){
+    /**
+     * Persiste um usuário
+     *
+     * @param usuario Usuário persistido
+     * @param empresa Empresa que o usuário participa
+     * @return Retorna o usuário persistido
+     */
+    public Usuario save(Usuario usuario, Empresa empresa) {
         usuario.setEmpresa(empresa);
         return this.usuarioRepository.save(usuario);
     }
 
-    public Boolean existsByEmail(String email){
+    /**
+     * Busca um usuário por e-mail
+     *
+     * @param email E-mail do usuário
+     * @return Retorna o usuário localizado ou lança uma exceção caso não localizado
+     */
+    public Usuario findByEmail(String email) {
+        return this.usuarioRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuário não localizado."));
+    }
+
+    /**
+     * Verifica se o usuário existe por e-mail
+     *
+     * @param email E-mail do usuário
+     * @return Retorna verdadeiro para caso o usuário exista ou falso caso não exista
+     */
+    public Boolean existsByEmail(String email) {
         return this.usuarioRepository.existsByEmail(email);
     }
 
-    public Boolean login(String email, String senha){
-        return this.usuarioRepository.existsByEmailAndSenha(email, senha);
-    }
-
-    public Usuario findByEmail(String email){
-        return this.usuarioRepository.findByEmail(email).orElseThrow(() -> new RuntimeException("Usuário não localizado."));
+    /**
+     * Contabiliza usuários cadastrados por empresa
+     *
+     * @param empresa Empresa que deseja contabilizar
+     * @return Retorna o número de usuários cadastrados na empresa
+     */
+    public Long count(Empresa empresa) {
+        return this.usuarioRepository.countByEmpresa(empresa);
     }
 }
