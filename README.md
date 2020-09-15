@@ -24,20 +24,20 @@ Front-end desenvolvido template engine JSP.
 - Font Awesome.
 
 ## Imagens
-###### Dashboard
-[Dashboard](src/main/resources/static/images/demo/dashboard.png)
+- Dashboard
+<img src="src/main/resources/static/images/demo/dashboard.png" alt="Dashboard"/>
 
-###### Lista de Projetos
-[Lista de Projetos](src/main/resources/static/images/demo/lista-projetos.png)
+-Lista de Projetos
+<img src="src/main/resources/static/images/demo/lista-projetos.png" alt="Lista de Projetos"/>
 
-###### Campanha
-[Lista de Projetos](src/main/resources/static/images/demo/visualizar-campanha.png)
+- Campanha
+<img src="src/main/resources/static/images/demo/visualizar-campanha.png" alt="Visualizar campanha"/>
 
-###### Categoria
-[Lista de Projetos](src/main/resources/static/images/demo/visualizar-categoria.png)
+- Categoria
+<img src="src/main/resources/static/images/demo/visualizar-categoria.png" alt="Visualizar Categoria"/>
 
-###### Votação
-[Lista de Projetos](src/main/resources/static/images/demo/votacao.png)
+- Votação
+<img src="src/main/resources/static/images/demo/votacao.png" alt="Votação"/>
 
-###### Resultados
-[Lista de Projetos](src/main/resources/static/images/demo/resultados.png)
+- Resultados
+<img src="src/main/resources/static/images/demo/resultados.png" alt="Resultados"/>
