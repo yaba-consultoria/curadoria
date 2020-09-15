@@ -90,7 +90,7 @@ public class ArquivoService {
             if (fileName.contains(".")) return fileName.substring(fileName.lastIndexOf(".") + 1);
             log.error("Falha ao extrair extensão do arquivo.");
         } catch (Exception ex) {
-            log.warn("Falha ao capturar a extensão do arquivo {}", handlerException.buildMessage(ex));
+            log.error("Falha ao capturar a extensão do arquivo {}", handlerException.buildMessage(ex));
         }
         return null;
     }
