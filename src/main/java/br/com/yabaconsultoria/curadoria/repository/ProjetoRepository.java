@@ -13,6 +13,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProjetoRepository extends JpaRepository<Projeto, Long> {
-
     Page<Projeto> findAllByTituloContaining(Pageable pageable, String titulo);
 }

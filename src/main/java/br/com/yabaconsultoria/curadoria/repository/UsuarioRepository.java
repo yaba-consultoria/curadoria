@@ -1,5 +1,6 @@
 package br.com.yabaconsultoria.curadoria.repository;
 
+import br.com.yabaconsultoria.curadoria.model.Empresa;
 import br.com.yabaconsultoria.curadoria.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,8 +14,7 @@ import java.util.Optional;
  */
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-
-    Boolean existsByEmail(String email);
-    Boolean existsByEmailAndSenha(String email, String senha);
     Optional<Usuario> findByEmail(String email);
+    Boolean existsByEmail(String email);
+    Long countByEmpresa(Empresa empresa);
 }
