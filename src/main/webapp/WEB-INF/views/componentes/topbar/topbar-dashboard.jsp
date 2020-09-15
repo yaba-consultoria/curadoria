@@ -1,14 +1,20 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
   <!-- Sidebar Toggle (Topbar) -->
   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars"></i>    
   </button>  
 
   <!-- Topbar Navbar -->
   <ul class="navbar-nav ml-auto">
+
+    <!-- Central de Alertas -->
+    <c:if test = "${not empty alertCenter}"> 
+      <c:import url="/WEB-INF/views/componentes/alert/alert-center.jsp" />
+    </c:if>
 
     <div class="topbar-divider d-none d-sm-block"></div>
 

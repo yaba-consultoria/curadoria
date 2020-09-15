@@ -14,17 +14,11 @@
                 <form action="${context}/login" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">     
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="senha" placeholder="Senha" required="required"> 
-                    </div>        
+                    </div>      
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <a href="#">Forgot Password?</a>
             </div>
         </div>
     </div>

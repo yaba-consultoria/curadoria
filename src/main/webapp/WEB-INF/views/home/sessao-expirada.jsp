@@ -11,6 +11,8 @@
   <meta name="author" content="">
 
   <title>Sessão Expirada</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="${context}/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

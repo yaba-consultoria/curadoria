@@ -96,22 +96,31 @@
                     </div>     
 
                     <div class="row">
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label>Beneficiários Direto:</label>
                                 <input type="number" class="form-control" name="beneficiariosDireto" placeholder="Qtd. Beneficiários Direto" required>     
                             </div>
                         </div>
-                        <div class="col-md-4 col-12">
+                        <div class="col-md-6 col-12">
                             <div class="form-group">
                                 <label>Beneficiários Indireto:</label>
                                 <input type="number" class="form-control" name="beneficiariosIndireto" placeholder="Qtd. Beneficiários Indireto" required> 
                             </div> 
                         </div>  
-                        <div class="col-md-4 col-12">
+                    </div>
+
+                    <div class="row">
+                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Orçamento:</label>
-                                <input type="text" class="form-control" name="orcamento" id="orcamento" placeholder="R$ 100.000,00" required> 
+                                <label>Valor Solicitado:</label>
+                                <input type="text" class="form-control" name="valorSolicitado" id="valorSolicitado" placeholder="R$ 100.000,00" required> 
+                            </div> 
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-group">
+                                <label>Valor Total:</label>
+                                <input type="text" class="form-control" name="valorTotal" id="valorTotal" placeholder="R$ 500.000,00" required> 
                             </div> 
                         </div>  
                     </div>
@@ -127,14 +136,14 @@
 
                     <fieldset>
                         <legend>Análise:</legend>
-                        <div class="row">      
+                        <div class="row">
                             <div class="col-md-6 col-12">    
                                  <div class="form-group">
                                     <label>Engajamento com Stakeholders:</label>
                                     <div class="rating">
-                                        <input type="radio" name="analise.engajamentoStakeHolders" value="RUIM" id="analise-engajamento-stakeholders-ruim"><label for="analise-engajamento-stakeholders-ruim">☆</label>
-                                        <input type="radio" name="analise.engajamentoStakeHolders" value="MEDIO" id="analise-engajamento-stakeholders-medio"><label for="analise-engajamento-stakeholders-medio">☆</label>
-                                        <input type="radio" name="analise.engajamentoStakeHolders" value="BOM" id="analise-engajamento-stakeholders-bom"><label for="analise-engajamento-stakeholders-bom">☆</label>
+                                        <input type="radio" name="analise.engajamentoStakeHolders" value="BOM" id="analise-engajamento-stakeholders-bom"><label for="analise-engajamento-stakeholders-bom" title="Bom">☆</label>
+                                        <input type="radio" name="analise.engajamentoStakeHolders" value="MEDIO" id="analise-engajamento-stakeholders-medio"><label for="analise-engajamento-stakeholders-medio" title="Médio">☆</label>
+                                        <input type="radio" name="analise.engajamentoStakeHolders" value="RUIM" id="analise-engajamento-stakeholders-ruim" checked><label for="analise-engajamento-stakeholders-ruim" title="Ruim" >☆</label>
                                     </div>
                                 </div>   
                             </div>                              
@@ -142,9 +151,9 @@
                                  <div class="form-group">
                                     <label>Alinhamento do Negócio:</label>
                                     <div class="rating">
-                                        <input type="radio" name="analise.alinhamentoNegocios" value="RUIM" id="analise.alinhamento-negocios-ruim"><label for="analise.alinhamento-negocios-ruim">☆</label>
-                                        <input type="radio" name="analise.alinhamentoNegocios" value="MEDIO" id="analise.alinhamento-negocios-medio"><label for="analise.alinhamento-negocios-medio">☆</label>
-                                        <input type="radio" name="analise.alinhamentoNegocios" value="BOM" id="analise.alinhamento-negocios-bom"><label for="analise.alinhamento-negocios-bom">☆</label>
+                                        <input type="radio" name="analise.alinhamentoNegocios" value="BOM" id="analise.alinhamento-negocios-bom"><label for="analise.alinhamento-negocios-bom" title="Bom">☆</label>
+                                        <input type="radio" name="analise.alinhamentoNegocios" value="MEDIO" id="analise.alinhamento-negocios-medio"><label for="analise.alinhamento-negocios-medio" title="Médio">☆</label>
+                                        <input type="radio" name="analise.alinhamentoNegocios" value="RUIM" id="analise.alinhamento-negocios-ruim" checked><label for="analise.alinhamento-negocios-ruim" title="Ruim">☆</label>
                                     </div>
                                 </div>   
                             </div> 
@@ -152,9 +161,9 @@
                                  <div class="form-group">
                                     <label>Visibilidade:</label>
                                     <div class="rating">
-                                        <input type="radio" name="analise.visibilidade" value="RUIM" id="analise-visibilidade-ruim"><label for="analise-visibilidade-ruim">☆</label>
-                                        <input type="radio" name="analise.visibilidade" value="MEDIO" id="analise-visibilidade-medio"><label for="analise-visibilidade-medio">☆</label>
-                                        <input type="radio" name="analise.visibilidade" value="BOM" id="analise-visibilidade-bom"><label for="analise-visibilidade-bom">☆</label>
+                                        <input type="radio" name="analise.visibilidade" value="BOM" id="analise-visibilidade-bom"><label for="analise-visibilidade-bom" title="Bom">☆</label>
+                                        <input type="radio" name="analise.visibilidade" value="MEDIO" id="analise-visibilidade-medio"><label for="analise-visibilidade-medio" title="Médio">☆</label>
+                                        <input type="radio" name="analise.visibilidade" value="RUIM" id="analise-visibilidade-ruim" checked><label for="analise-visibilidade-ruim" title="Ruim">☆</label>
                                     </div>
                                 </div>   
                             </div>

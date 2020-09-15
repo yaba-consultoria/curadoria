@@ -1,3 +1,4 @@
 $(document).ready(function(){
-    $("#orcamento").maskMoney({showSymbol: true, symbol:'R$ ', thousands:'.', decimal:','});
+    $("#valorSolicitado").maskMoney({showSymbol: true, symbol:'R$ ', thousands:'.', decimal:','});
+    $("#valorTotal").maskMoney({showSymbol: true, symbol:'R$ ', thousands:'.', decimal:','});
 });

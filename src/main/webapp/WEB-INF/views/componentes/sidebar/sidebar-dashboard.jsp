@@ -44,7 +44,7 @@
     </li>
   </c:if>  
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="${context}/dashboard/campanhas">
       <i class="fas fa-chart-bar"></i>
       <span>Campanhas</span></a>
   </li>

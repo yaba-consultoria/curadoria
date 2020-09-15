@@ -13,13 +13,15 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - Clientes</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
     <!-- Custom fonts for this template -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${context}/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -48,15 +50,16 @@
             <div class="container-fluid">                
 
                 <div class="d-flex flex-row justify-content-between">
+                    <h1 class="h3 mb-2 text-gray-800">Empresas</h1>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-empresa">Nova Empresa</button>
                     
-                    <div>
-                        <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Empresas</h1>                   
-                    </div>
-                    <div>
-                        <!-- Botão Nova Empresa -->
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-empresa">Nova Empresa</button>
-                    </div>
+                </div>
+
+                <!-- Alert Default -->
+                <div class="row">
+                  <div class="col-12">
+                    <c:import url="/WEB-INF/views/componentes/alert/alert-default.jsp" />
+                  </div>
                 </div>
 
                 <!-- DataTales Example -->
@@ -94,25 +97,7 @@
                       <h4 class="alert-heading">Sem Registros</h4>
                       <p>Não há registros de empresas no servidor.</p>
                     </div>
-                </c:if>       
-
-                <c:if test = "${not empty success}"> 
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <!-- Alert Cadastro Empresa -->
-                            <c:import url="/WEB-INF/views/componentes/alert/alert-success.jsp" />
-                        </div>
-                    </div>
-                </c:if>   
-
-                <c:if test = "${not empty danger}"> 
-                    <div class="row mt-4">
-                        <div class="col-12">
-                            <!-- Alert Cadastro Empresa -->
-                            <c:import url="/WEB-INF/views/componentes/alert/alert-danger.jsp" />
-                        </div>
-                    </div>
-                </c:if>        
+                </c:if>
 
             </div>
             <!-- /.container-fluid -->
@@ -121,13 +106,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
-                </div>
-            </div>
-        </footer>
+        <c:import url="/WEB-INF/views/componentes/footer/footer-dashboard.jsp"/>
         <!-- End of Footer -->
 
     </div>
@@ -145,23 +124,7 @@
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-empresa.jsp" />
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
+<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
 
 
 

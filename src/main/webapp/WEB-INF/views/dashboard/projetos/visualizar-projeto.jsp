@@ -14,13 +14,15 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - ${projeto.titulo}</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
     <!-- Custom fonts for this template -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="${context}/dashboard/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
     <link href="${context}/dashboard/css/rating.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
@@ -56,26 +58,30 @@
                     
                     <div>
                         <!-- Page Heading -->
-                        <h1 class="h3 mb-2 text-gray-800">Perfil Projeto</h1>                   
+                        <h1 class="h3 mb-2 text-gray-800">
+                            <a href="${context}/dashboard/projetos">Projetos</a>
+                            <small><i class="fas fa-angle-double-right text-primary mx-2"></i></small>
+                            <a href="${context}/dashboard/projetos/${projeto.id}">Perfil Projeto</a>
+                        </h1>                   
                     </div>
                 </div>     
 
                 <!-- Projeto Profile -->
                 <div class="card shadow my-5">
-                    <div class="card-header d-flex justify-content-between py-3">
-                      <h4 class="m-0 font-weight-bold text-primary"><i class="fas fa-user"></i> Entidade: ${projeto.proponente}</h4>
-                      <h4 class="m-0 font-weight-bold text-primary"><i class="far fa-newspaper"></i> Projeto: ${projeto.titulo}</h4>
-                      <h4 class="m-0 font-weight-bold text-primary"><i class="fas fa-map-marked-alt"></i> Localidade: ${projeto.localidade.cidade} | ${projeto.localidade.estado}</h4>
+                    <div class="card-header d-flex justify-content-between flex-wrap py-3">
+                      <h5 class="m-0 font-weight-bold text-primary py-2"><i class="fas fa-edit"></i> ${projeto.titulo}</h5>
+                      <h5 class="m-0 font-weight-bold text-primary py-2"><i class="fas fa-user-tie"></i> ${projeto.proponente}</h5>                      
+                      <h5 class="m-0 font-weight-bold text-primary py-2"><i class="fas fa-map-pin"></i> ${projeto.localidade.cidade} / ${projeto.localidade.estado}</h5>
                     </div>
                     <div class="card-body">
                       <div class="container-fluid">  
                           <div class="row">
-                                <div class="col-6">
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-12 px-4">
                                     <div class="row d-flex justify-content-center">
                                         <img src="${context}/${projeto.logo.caminhoRelativo}" alt="Logo - ${projeto.titulo}" class="img-thumbnail">
                                     </div>
                                     <div class="row mt-5">
-                                        <div class="col-xl-4 col-sm-12 mb-4">
+                                        <div class="col-xl-6 col-12 my-2">
                                           <div class="card border-left-primary shadow h-100 py-2">
                                             <div class="card-body">
                                               <div class="row no-gutters align-items-center">
@@ -90,7 +96,7 @@
                                             </div>
                                           </div>
                                         </div>
-                                        <div class="col-xl-4 col-sm-12 mb-4">
+                                        <div class="col-xl-6 col-12 my-2">
                                           <div class="card border-left-primary shadow h-100 py-2">
                                             <div class="card-body">
                                               <div class="row no-gutters align-items-center">
@@ -105,13 +111,28 @@
                                             </div>
                                           </div>
                                         </div>
-                                        <div class="col-xl-4 col-sm-12 mb-4">
+                                        <div class="col-xl-6 col-12 my-2">
                                           <div class="card border-left-primary shadow h-100 py-2">
                                             <div class="card-body">
                                               <div class="row no-gutters align-items-center">
                                                 <div class="col mr-2">
-                                                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Orçamento</div>
-                                                  <div class="h5 mb-0 font-weight-bold text-gray-800">R$ ${projeto.orcamento}</div>
+                                                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Valor Solicitado</div>
+                                                  <div class="h5 mb-0 font-weight-bold text-gray-800">R$ ${projeto.valorSolicitado}</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                  <i class="fas fa-comments-dollar fa-2x text-gray-300"></i>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-xl-6 col-12 my-2">
+                                          <div class="card border-left-primary shadow h-100 py-2">
+                                            <div class="card-body">
+                                              <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Valor Total</div>
+                                                  <div class="h5 mb-0 font-weight-bold text-gray-800">R$ ${projeto.valorTotal}</div>
                                                 </div>
                                                 <div class="col-auto">
                                                   <i class="fas fa-hand-holding-usd fa-2x text-gray-300"></i>
@@ -125,10 +146,10 @@
                                         <div class="col-12">
                                             <div class="card mb-4">
                                             <div class="card-header py-3">
-                                              <h6 class="m-0 font-weight-bold text-primary">Análises</h6>
+                                              <h4 class="m-0 font-weight-bold text-primary">Análises</h4>
                                             </div>
                                             <div class="card-body">
-                                              <h5 class="font-weight-bold my-3">Engajamento com os Stakeholders
+                                              <h6 class="font-weight-bold my-3">Engajamento com os Stakeholders
                                                 <span class="float-right">
                                                     <c:if test = "${projeto.analise.engajamentoStakeHolders eq 'RUIM'}"> 
                                                         <i class="fas fa-star text-warning"></i>
@@ -146,8 +167,8 @@
                                                         <i class="fas fa-star text-warning"></i>
                                                     </c:if>
                                                 </span>
-                                              </h5>
-                                              <h5 class="font-weight-bold my-3">Alinhamento dos Negócios
+                                              </h6>
+                                              <h6 class="font-weight-bold my-3">Alinhamento dos Negócios
                                                 <span class="float-right">
                                                     <c:if test = "${projeto.analise.alinhamentoNegocios eq 'RUIM'}"> 
                                                         <i class="fas fa-star text-warning"></i>
@@ -165,8 +186,8 @@
                                                         <i class="fas fa-star text-warning"></i>
                                                     </c:if>
                                                 </span>
-                                              </h5>
-                                              <h5 class="font-weight-bold my-3">Visibilidade
+                                              </h6>
+                                              <h6 class="font-weight-bold my-3">Visibilidade
                                                 <span class="float-right">
                                                     <c:if test = "${projeto.analise.visibilidade eq 'RUIM'}"> 
                                                         <i class="fas fa-star text-warning"></i>
@@ -184,17 +205,37 @@
                                                         <i class="fas fa-star text-warning"></i>
                                                     </c:if>
                                                 </span>
-                                              </h5>
+                                              </h6>
                                             </div>
                                         </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-6">
-                                    <h1 class="font-weight-bold my-3 text-center">Resumo</h1>
-                                    <div class="overflow-auto">
-                                        <p class="text-justify p-4">${projeto.resumo}</p>
-                                    </div>                                    
+                                <div class="col-xl-6 col-lg-12 col-md-12 col-12 px-4">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 class="font-weight-bold my-3 text-center">Resumo</h3>
+                                            <div class="overflow-auto">
+                                                <p class="text-justify p-4">${projeto.resumo}</p>
+                                            </div> 
+                                        </div>  
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 class="font-weight-bold my-3 text-center">Parceiros:</h3>
+                                            <div class="overflow-auto">
+                                                <p class="text-justify text-primary font-weight-bold p-4" style="font-size: 24px;">
+                                                    <c:if test = "${empty projeto.parceiros}"> 
+                                                        Não há parceiro(s) cadastrado(s) para este projeto.
+                                                    </c:if>
+                                                    <c:if test = "${not empty projeto.parceiros}"> 
+                                                        ${projeto.parceiros}
+                                                    </c:if>
+                                                </p>
+                                            </div> 
+                                        </div>  
+                                    </div>                                 
                                 </div>
                           </div>
                       </div>
@@ -208,13 +249,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
-                </div>
-            </div>
-        </footer>
+        <c:import url="/WEB-INF/views/componentes/footer/footer-dashboard.jsp"/>
         <!-- End of Footer -->
 
     </div>
@@ -232,23 +267,7 @@
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-projeto.jsp" />
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
+<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>

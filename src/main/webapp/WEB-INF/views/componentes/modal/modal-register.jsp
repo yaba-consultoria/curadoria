@@ -17,10 +17,7 @@
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="email" placeholder="E-mail" required="required">     
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="senha" placeholder="Senha" required="required"> 
-                    </div>       
+                    </div>      
                     <div class="form-group">
                         <input type="text" class="form-control" value="Leroy Merlin" placeholder="Empresa" disabled> 
                         <input type="hidden" class="form-control" name="cnpj" value="01.438.784/0001-05" placeholder="Leroy Merlin" required="required"> 
