@@ -27,7 +27,7 @@ Front-end desenvolvido template engine JSP.
 - Dashboard
 <img src="src/main/resources/static/images/demo/dashboard.png" alt="Dashboard"/>
 
--Lista de Projetos
+- Lista de Projetos
 <img src="src/main/resources/static/images/demo/lista-projetos.png" alt="Lista de Projetos"/>
 
 - Campanha
