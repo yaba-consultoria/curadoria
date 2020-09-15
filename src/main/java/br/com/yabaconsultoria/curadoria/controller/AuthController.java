@@ -6,6 +6,7 @@ import br.com.yabaconsultoria.curadoria.model.Usuario;
 import br.com.yabaconsultoria.curadoria.service.EmpresaService;
 import br.com.yabaconsultoria.curadoria.service.SessionService;
 import br.com.yabaconsultoria.curadoria.service.UsuarioService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpSession;
  * @since 02/09/2020
  */
 @Controller
+@Slf4j
 public class AuthController {
 
     private UsuarioService usuarioService;
@@ -52,10 +54,11 @@ public class AuthController {
             Empresa empresa = empresaService.findByCnpj(cnpj);
             this.usuarioService.save(usuario, empresa);
             // Dispara modal de usuário cadastrado com sucesso
-            redirectAttributes.addFlashAttribute("registerSuccess", "Usuário cadatsrado com sucesso!");
+            redirectAttributes.addFlashAttribute("registerSuccess", "Usuário cadastrado com sucesso!");
         } catch (Exception ex) {
             // Dispara modal de exception ao cadastrar usuário
             redirectAttributes.addFlashAttribute("registerDanger", handlerException.buildMessage(ex));
+            log.warn("Falha ao cadastrar usuário:{}", handlerException.buildMessage(ex));
         }
         return "redirect:/";
     }
@@ -84,6 +87,7 @@ public class AuthController {
         } catch (Exception ex) {
             // Dispara modal de exception ao efetuar login
             redirectAttributes.addFlashAttribute("loginIncorrect", handlerException.buildMessage(ex));
+            log.warn("Falha ao efetuar login: {}", handlerException.buildMessage(ex));
             return "redirect:/";
         }
     }
@@ -96,7 +100,11 @@ public class AuthController {
      */
     @GetMapping("/logout")
     public String getLogout(HttpServletRequest request) {
-        this.sessionService.logout(request);
+        try {
+            this.sessionService.logout(request);
+        } catch (Exception ex){
+            log.warn("Falha ao efetuar logoff: {}", handlerException.buildMessage(ex));
+        }
         return "redirect:/";
     }
 
