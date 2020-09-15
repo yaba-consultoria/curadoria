@@ -3,6 +3,7 @@ package br.com.yabaconsultoria.curadoria.service;
 import br.com.yabaconsultoria.curadoria.model.Empresa;
 import br.com.yabaconsultoria.curadoria.model.Usuario;
 import br.com.yabaconsultoria.curadoria.repository.UsuarioRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @since 02/09/2020
  */
 @Service
+@Slf4j
 public class UsuarioService {
 
     private UsuarioRepository usuarioRepository;
@@ -32,7 +34,9 @@ public class UsuarioService {
      */
     public Usuario save(Usuario usuario, Empresa empresa) {
         usuario.setEmpresa(empresa);
-        return this.usuarioRepository.save(usuario);
+        this.usuarioRepository.save(usuario);
+        log.info("Usuário cadastrado com sucesso {}", usuario.getEmail());
+        return usuario;
     }
 
     /**
