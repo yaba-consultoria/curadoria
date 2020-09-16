@@ -5,149 +5,165 @@
  */
 
 *, :after, :before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: poppins,lato,sans-serif;
-  font-style: normal;
-  line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    font-family: poppins, lato, sans-serif;
+    font-style: normal;
+    line-height: 1.8;
 }
 
-p{
-  color: #384257;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: justify;
-  margin: 1em 0 1.5em;
-}
-.about{
-  margin-top: 30px;
+p {
+    color: #384257;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    margin: 1em 0 1.5em;
 }
 
-.about h1{
-  color: #2c3e50;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
-  text-align: center;
+.about {
+    margin-top: 30px;
 }
 
-.about-content{
-  padding: 30px 0;
+.about h1 {
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
+    text-align: center;
 }
 
-.how-to-use{
-  margin-top: 10px;
+.about-content {
+    padding: 30px 0;
 }
 
-.how-to-use h2{
-  color: #2c3e50;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
-  text-align: left;
+.how-to-use {
+    margin-top: 10px;
 }
-.how-to-use-content{
-  padding: 30px 0;
+
+.how-to-use h2 {
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
+    text-align: left;
+}
+
+.how-to-use-content {
+    padding: 30px 0;
 }
 
 .carousel-item {
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .portfolio-item {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 /** INICIO Modal Custom **/
 .modal-custom {
-  color: #636363;
-  width: 350px;
+    color: #636363;
+    width: 350px;
 }
+
 .modal-custom .modal-content {
-  padding: 20px;
-  border-radius: 5px;
-  border: none;
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
 }
+
 .modal-custom .modal-header {
-  border-bottom: none;
-  position: relative;
-  justify-content: center;
+    border-bottom: none;
+    position: relative;
+    justify-content: center;
 }
+
 .modal-custom h4 {
-  text-align: center;
-  font-size: 26px;
-  margin: 30px 0 -15px;
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -15px;
 }
+
 .modal-custom .form-control:focus {
-  border-color: #70c5c0;
+    border-color: #70c5c0;
 }
+
 .modal-custom .form-control, .modal-custom .btn {
-  min-height: 40px;
-  border-radius: 3px;
+    min-height: 40px;
+    border-radius: 3px;
 }
+
 .modal-custom .close {
-  position: absolute;
-  top: -5px;
-  right: -5px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
 }
+
 .modal-custom .modal-footer {
-  background: #ecf0f1;
-  border-color: #dee4e7;
-  text-align: center;
-  justify-content: center;
-  margin: 0 -20px -20px;
-  border-radius: 5px;
-  font-size: 13px;
+    background: #ecf0f1;
+    border-color: #dee4e7;
+    text-align: center;
+    justify-content: center;
+    margin: 0 -20px -20px;
+    border-radius: 5px;
+    font-size: 13px;
 }
+
 .modal-custom .modal-footer a {
-  color: #999;
+    color: #999;
 }
+
 .modal-custom .avatar {
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: -70px;
-  width: 95px;
-  height: 95px;
-  border-radius: 50%;
-  z-index: 9;
-  background: #60c7c1;
-  padding: 15px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -70px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    z-index: 9;
+    background: #60c7c1;
+    padding: 15px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
+
 .modal-custom .avatar i {
-  color: #ffffff;
-  font-size: 56px;
+    color: #ffffff;
+    font-size: 56px;
 }
+
 .modal-custom.modal-dialog {
-  margin-top: 80px;
+    margin-top: 80px;
 }
+
 .modal-custom .btn, .modal-custom .btn:active {
-  color: #fff;
-  border-radius: 4px;
-  background: #60c7c1 !important;
-  text-decoration: none;
-  transition: all 0.4s;
-  line-height: normal;
-  border: none;
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1 !important;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    border: none;
 }
+
 .modal-custom .btn:hover, .modal-custom .btn:focus {
-  background: #45aba6 !important;
-  outline: none;
+    background: #45aba6 !important;
+    outline: none;
 }
+
 .trigger-btn {
-  display: inline-block;
-  margin: 100px auto;
+    display: inline-block;
+    margin: 100px auto;
 }
 
 /** FIM Modal Custom **/
@@ -157,41 +173,45 @@ p{
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 767px) {
-  .about h1{
-    font-size: 1.75rem;
-  }
-  .how-to-use h2{
-    font-size: 1.55rem;
-  }
+    .about h1 {
+        font-size: 1.75rem;
+    }
+
+    .how-to-use h2 {
+        font-size: 1.55rem;
+    }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .about h1{
-    font-size: 2rem;
-  }
-  .how-to-use h2{
-    font-size: 1.75rem;
-  }
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .how-to-use h2 {
+        font-size: 1.75rem;
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .about h1{
-    font-size: 2.25rem;
-  }
-  .how-to-use h2{
-    font-size: 2rem;
-  }
+    .about h1 {
+        font-size: 2.25rem;
+    }
+
+    .how-to-use h2 {
+        font-size: 2rem;
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .about h1{
-    font-size: 3rem;
-  }
-  .how-to-use h2{
-    font-size: 2.25rem;
-  }
+    .about h1 {
+        font-size: 3rem;
+    }
+
+    .how-to-use h2 {
+        font-size: 2.25rem;
+    }
 }
 

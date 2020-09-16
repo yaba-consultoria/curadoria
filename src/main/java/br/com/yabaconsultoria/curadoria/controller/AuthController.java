@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Controller responsável pela autenticação do usuário
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 02/09/2020
@@ -102,7 +103,7 @@ public class AuthController {
     public String getLogout(HttpServletRequest request) {
         try {
             this.sessionService.logout(request);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             log.error("Falha ao efetuar logoff: {}", handlerException.buildMessage(ex));
         }
         return "redirect:/";

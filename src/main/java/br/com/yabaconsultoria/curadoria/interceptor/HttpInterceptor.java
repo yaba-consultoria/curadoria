@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Classe responsável por interceptar e autorizar o acesso do usuário a cada requisição
  * Redirecionar para página de sessão expirada, caso não haja uma sessão válida
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 04/09/2020

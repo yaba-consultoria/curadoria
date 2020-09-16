@@ -19,7 +19,9 @@ import java.util.List;
 @Repository
 public interface VotoRepository extends JpaRepository<Voto, Long> {
     Long countByCategoria(Categoria categoria);
+
     Long countByUsuarioAndCategoria(Usuario usuario, Categoria categoria);
+
     Long countByCategoriaAndProjeto(Categoria categoria, Projeto projeto);
 
     Boolean existsByUsuarioAndCategoriaAndProjeto(Usuario usuario, Categoria categoria, Projeto projeto);
@@ -27,10 +29,11 @@ public interface VotoRepository extends JpaRepository<Voto, Long> {
     void deleteByCategoriaAndProjeto(Categoria categoria, Projeto projeto);
 
     void deleteAllByCategoria(Categoria categoria);
+
     void deleteAllByUsuarioAndCategoria(Usuario usuario, Categoria categoria);
 
     // Queries personalizadas
-    
+
     @Query("SELECT voto.projeto FROM Voto voto WHERE voto.categoria = :categoria GROUP BY voto.projeto")
     List<Projeto> findAllProjectByCategoria(@Param("categoria") Categoria categoria);
 

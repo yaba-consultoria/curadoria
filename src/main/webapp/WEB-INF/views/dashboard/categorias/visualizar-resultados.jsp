@@ -16,11 +16,13 @@
     <!-- Fontawesome -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
     <!-- Bootstrap Select -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" rel="stylesheet"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"
+          rel="stylesheet">
 
 </head>
 
@@ -30,7 +32,7 @@
 <div id="wrapper">
 
     <!-- Import Sidebar -->
-    <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp"/>
     <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
@@ -40,7 +42,7 @@
         <div id="content">
 
             <!-- Import Topbar -->
-            <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
+            <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp"/>
             <!-- End Import Topbar -->
 
             <!-- Begin Page Content -->
@@ -59,7 +61,7 @@
                             <small><i class="fas fa-angle-double-right text-primary mx-2"></i></small>
                             <a href="${context}/dashboard/campanhas/${campanha.id}/categorias/${categoria.id}/resultados">Resultados</a>
                         </h1>
-                    </div>                    
+                    </div>
                 </div>
 
 
@@ -68,20 +70,23 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="empresa">Empresa:</label>
-                                <input type="text" class="form-control" id="empresa" value="${campanha.empresa.nome}" readonly
+                                <input type="text" class="form-control" id="empresa" value="${campanha.empresa.nome}"
+                                       readonly
                                        required>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="nome-campanha">Nome da Campanha:</label>
-                                <input type="text" class="form-control" id="nome-campanha" value="${campanha.nome}" readonly required>
+                                <input type="text" class="form-control" id="nome-campanha" value="${campanha.nome}"
+                                       readonly required>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="categoria">Categoria:</label>
-                                <input type="text" class="form-control" id="categoria" value="${categoria.tipo.descricao}" readonly
+                                <input type="text" class="form-control" id="categoria"
+                                       value="${categoria.tipo.descricao}" readonly
                                        required>
                             </div>
                         </div>
@@ -91,13 +96,13 @@
 
                 <!-- DataTales Example -->
                 <h2 class="mt-4">Resultados da Categoria</h2>
-                <!-- Alert Sem Registros -->                
-                <c:if test = "${empty rankingProjetos}"> 
+                <!-- Alert Sem Registros -->
+                <c:if test="${empty rankingProjetos}">
                     <div class="alert alert-danger mt-4" role="alert">
-                      <h4 class="alert-heading">Sem Registros</h4>
-                      <p>Não há resultados desta categorias para ser exibido(s).</p>
+                        <h4 class="alert-heading">Sem Registros</h4>
+                        <p>Não há resultados desta categorias para ser exibido(s).</p>
                     </div>
-                </c:if> 
+                </c:if>
                 <c:if test="${not empty rankingProjetos}">
 
                     <div class="row my-3">
@@ -157,7 +162,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-12">
                             <!-- Bar Chart -->

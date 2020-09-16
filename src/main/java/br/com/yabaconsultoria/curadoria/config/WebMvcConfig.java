@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Classe de configuração web do projeto
+ *
  * @author Lucas Copque
  * @version 1.0
  * @since 04/09/2020
@@ -18,6 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * Adiciona HttpInterceptior filter
+     *
      * @param registry Custom HttpInterceptor filter
      */
     @Override
@@ -27,6 +29,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     /**
      * Adiciona Cors filter
+     *
      * @param registry Custom Cors filter
      */
     @Override
