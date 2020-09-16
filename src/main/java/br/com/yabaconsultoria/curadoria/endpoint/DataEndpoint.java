@@ -1,7 +1,6 @@
 package br.com.yabaconsultoria.curadoria.endpoint;
 
 import br.com.yabaconsultoria.curadoria.model.Categoria;
-import br.com.yabaconsultoria.curadoria.service.CampanhaService;
 import br.com.yabaconsultoria.curadoria.service.CategoriaService;
 import br.com.yabaconsultoria.curadoria.service.EmpresaService;
 import br.com.yabaconsultoria.curadoria.service.VotoService;
