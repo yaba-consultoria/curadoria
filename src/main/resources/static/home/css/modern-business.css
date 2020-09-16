@@ -3,9 +3,55 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
+  font-family: poppins,lato,sans-serif;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+p{
+  color: #384257;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: justify;
+  margin: 1em 0 1.5em;
+}
+.about{
+  margin-top: 30px;
+}
+
+.about h1{
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
+  text-align: center;
+}
+
+.about-content{
+  padding: 30px 0;
+}
+
+.how-to-use{
+  margin-top: 10px;
+}
+
+.how-to-use h2{
+  color: #2c3e50;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 1px 0 5px rgba(150, 150, 150, 1);
+  text-align: left;
+}
+.how-to-use-content{
+  padding: 30px 0;
 }
 
 .carousel-item {
@@ -77,7 +123,7 @@ body {
   z-index: 9;
   background: #60c7c1;
   padding: 15px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 }
 .modal-custom .avatar i {
   color: #ffffff;
@@ -105,3 +151,47 @@ body {
 }
 
 /** FIM Modal Custom **/
+
+
+/** MEDIAS QUERIES **/
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+  .about h1{
+    font-size: 1.75rem;
+  }
+  .how-to-use h2{
+    font-size: 1.55rem;
+  }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .about h1{
+    font-size: 2rem;
+  }
+  .how-to-use h2{
+    font-size: 1.75rem;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .about h1{
+    font-size: 2.25rem;
+  }
+  .how-to-use h2{
+    font-size: 2rem;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .about h1{
+    font-size: 3rem;
+  }
+  .how-to-use h2{
+    font-size: 2.25rem;
+  }
+}
+
