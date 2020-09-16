@@ -68,14 +68,14 @@
       <hr>
       <div class="about-content">
         <p>
-          Essa plataforma foi desenvolvida para apoiar o Comitê de Sustentabilidade da Leroy Merlin a selecionar os projetos que serão incentivados via dedução do Imposto de Renda em 2020, facilitando todo o processo de tomada de decisão para o aporte financeiro dos projetos selecionados.       
+          Essa plataforma foi desenvolvida para apoiar o Comitê de Sustentabilidade da Leroy Merlin à selecionar os projetos que serão incentivados via dedução do Imposto de Renda em 2020, facilitando todo o processo de tomada de decisão para o aporte financeiro dos projetos selecionados.
         </p>
         <p>São 4 categorias:</p>
         <ul>
-          <li>Fundo da Criança e do Adolescente</li>
-          <li>Fundo do Idoso</li>
-          <li>Lei de Incentivo ao Esporte</li>
-          <li>Lei de Incentivo à Cultura</li>
+          <li>Fundo da Criança e do Adolescente;</li>
+          <li>Fundo do Idoso;</li>
+          <li>Lei de Incentivo ao Esporte;</li>
+          <li>Lei de Incentivo à Cultura.</li>
         </ul>
         <p>
           Desenvolvida pensando na melhor experiência do usuário, a plataforma conta com um template moderno, intuitivo e responsivo. Veja abaixo como utilizar sua funcionalidades.
@@ -91,8 +91,8 @@
           <h2><i class="fas fa-sitemap mx-2"></i> Como Utilizar</h2>
           <hr>
           <div class="how-to-use-content">
-            <p>Para acessar o painel com as categorias disponpiveis ao Comitê, o usuário precisa apenas se cadastrar informando <b>Nome*</b> e <b>E-mail*</b>.</p>
-            <p>Após acessar o painel o usuário pode:</p>
+            <p>Para acessar o painel com as categorias disponíveis ao Comitê, o usuário precisa apenas se cadastrar informando <b>Nome*</b> e <b>E-mail*</b>.</p>
+            <p>Após acessar o painel, o usuário pode:</p>
             <ul>
               <li>Visualizar campanhas;</li>
               <li>Visualizar enquentes;</li>
