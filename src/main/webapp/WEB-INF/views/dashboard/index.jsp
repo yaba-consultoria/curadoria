@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
@@ -14,13 +14,12 @@
   <meta name="author" content="">
 
   <title>Curadoria Yabá Consultoria - Dashboard</title>
-  <!-- favicon -->
-  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-
-  <!-- Custom fonts for this template-->
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="${context}/images/favicon.png" type="image/x-icon">
+  <!-- Fontawesome -->
   <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
 
@@ -51,11 +50,12 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
           </div>
 
+          <!-- Exibe somente se o usuário for admin -->  
           <c:if test = "${usuario.admin}">  
-            <!-- Content Row -->
+            <!-- Statistics Cards Row -->
             <div class="row">
 
-              <!-- Earnings (Monthly) Card Example -->
+              <!-- Usuario Cadastrados Statistics Card -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
                   <div class="card-body">
@@ -81,7 +81,7 @@
                 </div>
               </div>
 
-              <!-- Earnings (Monthly) Card Example -->
+              <!-- Projetos Cadastrados Statistics Card -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-success shadow h-100 py-2">
                   <div class="card-body">
@@ -107,7 +107,7 @@
                 </div>
               </div>
 
-              <!-- Earnings (Monthly) Card Example -->
+              <!-- Campanhas Cadastradas Statistics Card -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
                   <div class="card-body">
@@ -137,7 +137,7 @@
                 </div>
               </div>
 
-              <!-- Pending Requests Card Example -->
+              <!-- Enquetes Cadastradas Statistics Card -->
               <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary shadow h-100 py-2">
                   <div class="card-body">
@@ -162,26 +162,26 @@
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Content Row -->
+            </div>
+            <!-- ./ Statistics Cards Row -->
           </c:if>  
 
-          <div class="row">
-
-            <!-- Content Column -->
+          <!-- Enquetes Cards Row -->
+          <div class="row">            
             <div class="col-lg-12 mb-4">
 
-              <!-- Project Card Example -->
+              <!-- Card Enquetes - Abertas -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Enquetes em Votação: 
-                  <c:if test = "${not empty categoriasAberta.content}"> 
-                    </br><small>Exibindo: ${categoriasAberta.content.size()} de ${categoriasAberta.totalElements}</small></h6>
-                  </c:if>
-                  <c:if test = "${empty categoriasAberta.content}">
-                    </br><small>Exibindo: 0 de 0</small></h6>
-                  </c:if> 
+                    <c:if test = "${not empty categoriasAberta.content}">
+                      <br><small>Exibindo: ${categoriasAberta.content.size()} de ${categoriasAberta.totalElements}</small></h6>
+                    </c:if>
+                    <c:if test = "${empty categoriasAberta.content}">
+                      <br><small>Exibindo: 0 de 0</small>
+                    </c:if>
+                  </h6>
                 </div>
                 <div class="card-body">
                   <c:if test = "${empty categoriasAberta.content}"> 
@@ -204,16 +204,17 @@
                 </div>
               </div>
 
-              <!-- Project Card Example -->
+              <!-- Card Enquetes - Fechadas -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-danger">Enquetes Encerradas: 
-                  <c:if test = "${not empty categoriasFechada.content}"> 
-                    </br><small>Exibindo: ${categoriasFechada.content.size()} de ${categoriasFechada.totalElements}</small></h6>
-                  </c:if>
-                  <c:if test = "${empty categoriasFechada.content}">
-                    </br><small>Exibindo: 0 de 0</small></h6>
-                  </c:if> 
+                    <c:if test = "${not empty categoriasFechada.content}">
+                      <br><small>Exibindo: ${categoriasFechada.content.size()} de ${categoriasFechada.totalElements}</small></h6>
+                    </c:if>
+                    <c:if test = "${empty categoriasFechada.content}">
+                      <br><small>Exibindo: 0 de 0</small>
+                    </c:if>
+                  </h6>
                 </div>
                 <div class="card-body">
                   <c:if test = "${empty categoriasFechada.content}"> 
@@ -235,10 +236,10 @@
                   </c:if>                                   
                 </div>
               </div>
-
             </div>
           
           </div>
+           <!-- ./ Enquetes Cards Row -->
 
         </div>
         <!-- /.container-fluid -->
@@ -261,6 +262,7 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
+  <!-- Import Component - Modal de Logout -->
   <c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />  
 
   <!-- Bootstrap core JavaScript-->
