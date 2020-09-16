@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
@@ -14,20 +14,18 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - Projetos</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="${context}/images/favicon.png" type="image/x-icon">
 
-    <!-- Custom fonts for this template -->
+    <!-- Fontawesome -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
     <link href="${context}/dashboard/css/rating.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
+    <!-- Data Tables -->
     <link href="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
     <!-- Bootstrap TagInput -->
     <link href="${context}/dashboard/vendor/bootstrap-taginput/css/bootstrap-tagsinput.css" rel="stylesheet">
 
@@ -38,8 +36,9 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Import Sidebar -->
     <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -47,9 +46,9 @@
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
+            <!-- Import Topbar -->
             <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
-            <!-- End of Topbar -->
+            <!-- End Import Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">                
@@ -68,7 +67,7 @@
 
                   <div class="card-header py-3">
                       <h6 class="m-0 font-weight-bold text-primary">Lista de Projetos
-                      </br><small>Exibindo: ${projetos.content.size()} de ${projetos.totalElements}</small></h6>
+                      <br><small>Exibindo: ${projetos.content.size()} de ${projetos.totalElements}</small></h6>
                   </div>
 
                   <div class="card-body">
@@ -99,51 +98,10 @@
                                     </button>
                                   </div>
                                 </div>
-                              </form>   
-                              <nav class="" aria-label="Paginação de Projetos">
-                                <ul class="pagination"> 
-                                  <c:choose> 
-                                    <c:when test = "${projetos.totalPages == 1}">
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
-                                    </c:when>
-                                    <c:when test = "${(projetos.totalPages == 2) && (projetos.number + 1 < projetos.totalPages)}">
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
-                                    </c:when>
-                                    <c:when test = "${(projetos.totalPages == 2) && (projetos.number + 1 == projetos.totalPages)}">
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Primeira</button></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><button class="page-link text-primary" disabled>Última</button></li>
-                                    </c:when>
-                                    <c:when test = "${(projetos.totalPages >= 3) && (projetos.number == 0)}">
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 2}&titulo=${titulo}">${projetos.number + 3}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
-                                    </c:when>
-                                    <c:when test = "${(projetos.totalPages >= 3) && (projetos.number > 0) && (projetos.number + 1 < projetos.totalPages)}">
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number + 1}&titulo=${titulo}">${projetos.number + 2}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
-                                    </c:when>
-                                    <c:when test = "${(projetos.totalPages >= 3) && (projetos.number + 1 == projetos.totalPages)}">
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?&titulo=${titulo}">Primeira</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 2}&titulo=${titulo}">${projetos.number - 1}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.number - 1}&titulo=${titulo}">${projetos.number}</a></li>
-                                      <li class="page-item active"><a class="page-link text-white" href="${context}/dashboard/projetos?page=${projetos.number}&titulo=${titulo}">${projetos.number + 1}</a></li>
-                                      <li class="page-item"><a class="page-link text-primary" href="${context}/dashboard/projetos?page=${projetos.totalPages - 1}&titulo=${titulo}">Última</a></li>
-                                    </c:when>
-                                  </c:choose> 
-                                </ul>
-                              </nav>  
+                              </form>                                 
+                              <!-- Import Topbar -->
+                              <c:import url="/WEB-INF/views/componentes/pagination/pagination-listar-projetos.jsp" />
+                              <!-- End Import Topbar -->
                             </div>
                         </div>               
                         <div class="row">
@@ -227,12 +185,11 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Modal Cadastro Projeto -->
+<!-- Import Modal Cadastro Projeto -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-projeto.jsp" />
-<!-- Modal Excluir Projeto -->
+<!-- Import Modal Excluir Projeto -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-excluir-projeto.jsp" />
-
-<!-- Logout Modal-->
+<!-- Import Logout Modal-->
 <c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
 
 
@@ -247,46 +204,13 @@
 
 <!-- Custom scripts for all pages-->
 <script src="${context}/dashboard/js/sb-admin-2.min.js"></script>
+
+<!-- Image Logo Preview-->
 <script src="${context}/dashboard/js/image-preview.js"></script>
 
 <!-- Field Validators-->
 <script src="${context}/dashboard/vendor/jquery-mask-money/jquery.maskMoney.js"></script>
 <script src="${context}/dashboard/vendor/jquery-mask-money/mask.js"></script>
-
-<!-- Page level plugins -->
-<script src="${context}/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="${context}/dashboard/js/demo/datatables-demo.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($){
-      
-  $(".btnrating").on('click',(function(e) {
-  
-  var previous_value = $("#selected_rating").val();
-  
-  var selected_value = $(this).attr("data-attr");
-  $("#selected_rating").val(selected_value);
-  
-  $(".selected-rating").empty();
-  $(".selected-rating").html(selected_value);
-  
-  for (i = 0; i <= selected_value; ++i) {
-  $("#rating-star-"+i).toggleClass('btn-warning');
-  $("#rating-star-"+i).toggleClass('btn-default');
-  }
-  
-  for (ix = 1; ix <= previous_value; ++ix) {
-  $("#rating-star-"+ix).toggleClass('btn-warning');
-  $("#rating-star-"+ix).toggleClass('btn-default');
-  }
-  
-  }));
-  
-    
-});
-</script>
 
 </body>
 
