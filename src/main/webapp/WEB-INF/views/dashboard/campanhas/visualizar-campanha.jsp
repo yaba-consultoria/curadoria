@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,20 +13,16 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - Campanhas</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-
-    <!-- Custom fonts for this template -->
+    <!-- Fontawesome -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
+    <!-- Data Tables -->
     <link href="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" rel="stylesheet">
+    <!-- Bootstrap Select -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" rel="stylesheet"> 
 
 </head>
 
@@ -36,8 +31,9 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Import Sidebar -->
     <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -45,9 +41,9 @@
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
+            <!-- Import Topbar -->
             <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
-            <!-- End of Topbar -->
+            <!-- End Import Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">                
@@ -91,14 +87,14 @@
                     <div class="row">
                         <div class="col-xl-6 col-12">
                             <div class="form-group">
-                                <label>Empresa:</label>
-                                <input type="text" class="form-control" value="${campanha.empresa.nome}" readonly required>     
+                                <label for="empresas">Empresa:</label>
+                                <input type="text" class="form-control" id="empresas" value="${campanha.empresa.nome}" readonly required>
                             </div>
                         </div>
                         <div class="col-xl-6 col-12">
                             <div class="form-group">
-                                <label>Nome da Campanha:</label>
-                                <input type="text" class="form-control" value="${campanha.nome}" readonly required>     
+                                <label for="nome-campanha">Nome da Campanha:</label>
+                                <input type="text" class="form-control" id="nome-campanha" value="${campanha.nome}" readonly required>
                             </div>
                         </div>
                     </div>
@@ -128,7 +124,7 @@
                         </div>
                         <div class="card-body">  
                             <div class="table-responsive">
-                                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered text-center" id="dataTable">
                                     <thead>
                                     <tr>
                                         <th>Tipo</th>
@@ -230,19 +226,12 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Modal Cadastro Campanha -->
+<!-- Import Modal Cadastro Campanha -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-campanha.jsp" />
-
-<!-- Modal Alterar Status Campanha -->
+<!-- Import Modal Alterar Status Campanha -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-alterar-status-campanha.jsp" />
-
-<!-- Modal Cadatsro Categoria Campanha -->
+<!-- Import Modal Cadatsro Categoria Campanha -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-categoria-campanha.jsp" />
-
-<!-- Logout Modal-->
-<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
-
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>
@@ -254,18 +243,12 @@
 <!-- Custom scripts for all pages-->
 <script src="${context}/dashboard/js/sb-admin-2.min.js"></script>
 
-<!-- Field Validators-->
-<script src="${context}/dashboard/js/cnpj-validator.js"></script>
-<script src="${context}/dashboard/vendor/jquery-mask/jquery.mask.js"></script>
-<script src="${context}/dashboard/vendor/jquery-mask/mask.js"></script>
-
 <!-- Page level plugins -->
 <script src="${context}/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="${context}/dashboard/js/demo/datatables-default.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="${context}/dashboard/js/demo/datatables-demo.js"></script>
-
+<!-- Bootstrap Select -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
 
 </body>

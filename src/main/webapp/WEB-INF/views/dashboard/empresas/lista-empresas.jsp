@@ -121,8 +121,6 @@
 
 <!-- Import Modal Cadastro Empresa -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-empresa.jsp" />
-<!-- Import Logout Modal-->
-<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>

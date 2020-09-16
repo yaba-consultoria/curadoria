@@ -189,10 +189,6 @@
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-projeto.jsp" />
 <!-- Import Modal Excluir Projeto -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-excluir-projeto.jsp" />
-<!-- Import Logout Modal-->
-<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
-
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>

@@ -178,7 +178,7 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Enquetes em Votação: 
                     <c:if test = "${not empty categoriasAberta.content}">
-                      <br><small>Exibindo: ${categoriasAberta.content.size()} de ${categoriasAberta.totalElements}</small></h6>
+                      <br><small>Exibindo: ${categoriasAberta.content.size()} de ${categoriasAberta.totalElements}</small>
                     </c:if>
                     <c:if test = "${empty categoriasAberta.content}">
                       <br><small>Exibindo: 0 de 0</small>
@@ -211,7 +211,7 @@
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-danger">Enquetes Encerradas: 
                     <c:if test = "${not empty categoriasFechada.content}">
-                      <br><small>Exibindo: ${categoriasFechada.content.size()} de ${categoriasFechada.totalElements}</small></h6>
+                      <br><small>Exibindo: ${categoriasFechada.content.size()} de ${categoriasFechada.totalElements}</small>
                     </c:if>
                     <c:if test = "${empty categoriasFechada.content}">
                       <br><small>Exibindo: 0 de 0</small>
@@ -249,7 +249,7 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- Footer -->
+      <!-- Import Footer -->
       <c:import url="/WEB-INF/views/componentes/footer/footer-dashboard.jsp"/>
       <!-- End of Footer -->
 
@@ -264,9 +264,6 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Import Component - Modal de Logout -->
-  <c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />  
-
   <!-- Bootstrap core JavaScript-->
   <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>
   <script src="${context}/dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -275,10 +272,7 @@
   <script src="${context}/dashboard/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="${context}/dashboard/js/sb-admin-2.min.js"></script>
-
-
-  
+  <script src="${context}/dashboard/js/sb-admin-2.min.js"></script>  
   
 </body>
 

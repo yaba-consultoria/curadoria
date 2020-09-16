@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
-<!-- Modal HTML -->
 <div id="modal-cadastro-campanha" class="modal fade">
     <div class="modal-dialog modal-dialog-centered modal-custom">
         <div class="modal-content">
@@ -11,12 +10,12 @@
             <div class="modal-body">
                 <form action="${context}/dashboard/campanhas/cadastro" method="post">                                       
                     <div class="form-group">
-                        <label>Nome da Campanha:</label>
-                        <input type="text" class="form-control" name="nome" required>     
+                        <label for="nome-campanha">Nome da Campanha:</label>
+                        <input type="text" class="form-control" id="nome-campanha" name="nome" required>
                     </div>
                     <div class="form-group">
-                        <label>Empresa:</label>
-                        <select class="form-control" name="empresa">
+                        <label for="empresa">Empresa:</label>
+                        <select class="form-control" id="empresa" name="empresa">
                             <c:forEach var="empresa" items="${empresas}">
                                 <option value="${empresa.id}">${empresa.nome}</option>
                             </c:forEach>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -38,5 +38,5 @@
 </nav>
 <!-- End of Topbar -->
 
+<!-- Import Modal Login -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
-<!-- End of Topbar -->

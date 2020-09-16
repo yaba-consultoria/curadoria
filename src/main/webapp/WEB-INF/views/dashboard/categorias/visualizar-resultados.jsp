@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="context" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,22 +13,14 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - Categorias</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-
-    <!-- Custom fonts for this template -->
+    <!-- Fontawesome -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css"
-          rel="stylesheet">
+    <!-- Bootstrap Select -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" rel="stylesheet"> 
 
 </head>
 
@@ -39,8 +29,9 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
-    <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp"/>
+    <!-- Import Sidebar -->
+    <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -48,29 +39,27 @@
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
-            <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp"/>
-            <!-- End of Topbar -->
+            <!-- Import Topbar -->
+            <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
+            <!-- End Import Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-row justify-content-between flex-wrap">
 
                     <div>
                         <!-- Page Heading -->
                         <h1 class="h3 mb-2 text-gray-800">
-                            <c:if test="${categoria.status eq 'CRIADO'}">
-                                <span class="badge badge-warning ml-2">Status: ${categoria.status.descricao}</span>
-                            </c:if>
-                            <c:if test="${categoria.status eq 'ABERTO'}">
-                                <span class="badge badge-success ml-2">Status: ${categoria.status.descricao}</span>
-                            </c:if>
-                            <c:if test="${categoria.status eq 'FECHADO'}">
-                                <span class="badge badge-danger ml-2">Status: ${categoria.status.descricao}</span>
-                            </c:if>
+                            <a href="${context}/dashboard/campanhas">Campanhas</a>
+                            <small><i class="fas fa-angle-double-right text-primary mx-2"></i></small>
+                            <a href="${context}/dashboard/campanhas/${campanha.id}">Perfil Campanha</a>
+                            <small><i class="fas fa-angle-double-right text-primary mx-2"></i></small>
+                            <a href="${context}/dashboard/campanhas/${campanha.id}/categorias/${categoria.id}">Categoria</a>
+                            <small><i class="fas fa-angle-double-right text-primary mx-2"></i></small>
+                            <a href="${context}/dashboard/campanhas/${campanha.id}/categorias/${categoria.id}/resultados">Resultados</a>
                         </h1>
-                    </div>
+                    </div>                    
                 </div>
 
 
@@ -78,21 +67,21 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-group">
-                                <label>Empresa:</label>
-                                <input type="text" class="form-control" value="${campanha.empresa.nome}" readonly
+                                <label for="empresa">Empresa:</label>
+                                <input type="text" class="form-control" id="empresa" value="${campanha.empresa.nome}" readonly
                                        required>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
-                                <label>Nome da Campanha:</label>
-                                <input type="text" class="form-control" value="${campanha.nome}" readonly required>
+                                <label for="nome-campanha">Nome da Campanha:</label>
+                                <input type="text" class="form-control" id="nome-campanha" value="${campanha.nome}" readonly required>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
-                                <label>Categoria:</label>
-                                <input type="text" class="form-control" value="${categoria.tipo.descricao}" readonly
+                                <label for="categoria">Categoria:</label>
+                                <input type="text" class="form-control" id="categoria" value="${categoria.tipo.descricao}" readonly
                                        required>
                             </div>
                         </div>
@@ -174,8 +163,7 @@
                             <!-- Bar Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Usuários x
-                                        Votos: ${usuariosUmVoto.size()}</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Usuários x Votos:</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-bar">
@@ -193,8 +181,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered text-center" id="data-table-ranking-categoria"
-                                           width="100%" cellspacing="0">
+                                    <table class="table table-bordered text-center" id="data-table-ranking-categoria">
                                         <thead>
                                         <tr>
                                             <th>Projeto</th>
@@ -240,15 +227,10 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Modal Altear Status Categoria -->
+<!-- Import Modal Altear Status Categoria -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-alterar-status-categoria.jsp"/>
-
-<!-- Modal Indicar Projeto Categoria -->
+<!-- Import Modal Indicar Projeto Categoria -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-indicar-projeto-categoria.jsp"/>
-
-<!-- Logout Modal-->
-<c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp"/>
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>
@@ -265,90 +247,14 @@
 <script src="${context}/dashboard/vendor/jquery-mask/jquery.mask.js"></script>
 <script src="${context}/dashboard/vendor/jquery-mask/mask.js"></script>
 
-<!-- Page level plugins -->
+<!-- Data Table -->
 <script src="${context}/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="${context}/dashboard/js/demo/datatable-categoria-resultado.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="${context}/dashboard/js/demo/datatables-demo.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
-<!-- Charts js -->
+<!-- Chart Js -->
 <script src="${context}/dashboard/vendor/chart.js/Chart.min.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#data-table-ranking-categoria').DataTable({
-            "order": [[3, "desc"]]
-        });
-    });
-</script>
-
-<script type="text/javascript">
-    // Set new default font family and font color to mimic Bootstrap's default styling
-    Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-    Chart.defaults.global.defaultFontColor = '#858796';
-
-    async function buildChart() {
-        let endpoint = "https://curadoria.yabaconsultoria.com.br/endpoint/campanhas/${campanha.id}/categorias/${categoria.id}/resultado/votos";
-        let response = await fetch(endpoint, {
-            method: 'GET',
-            headers: {
-                "Content-Type": "text/plain"
-            }
-        })
-        .then(res => res.json())
-        let data = await response;        
-
-        // Bar Chart Example
-        var ctx = document.getElementById("usuario-votos");
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ["0 Votos", "1 Voto", "2 Votos", "3 Votos"],
-                datasets: [{
-                    label: "Usuários",
-                    backgroundColor: "#2ecc71",
-                    hoverBackgroundColor: "#27ae60",
-                    borderColor: "#2ecc71",
-                    data: await data,
-                }],
-            },
-            options: {
-                maintainAspectRatio: false,
-                layout: {
-                    padding: {
-                        left: 10,
-                        right: 25,
-                        top: 25,
-                        bottom: 0
-                    }
-                },
-                legend: {
-                    display: false
-                },
-                tooltips: {
-                    titleMarginBottom: 10,
-                    titleFontColor: '#6e707e',
-                    titleFontSize: 14,
-                    backgroundColor: "rgb(255,255,255)",
-                    bodyFontColor: "#858796",
-                    borderColor: '#dddfeb',
-                    borderWidth: 1,
-                    xPadding: 15,
-                    yPadding: 15,
-                    displayColors: false,
-                    caretPadding: 10,
-                },
-            }
-        });
-
-    }
-
-    buildChart();
-
-
-</script>
+<script src="${context}/dashboard/js/demo/chart-categoria-votos.js"></script>
 
 </body>
 

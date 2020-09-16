@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!-- Modal HTML -->
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <div id="modal-cadastro-projeto" class="modal fade">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-custom">
         <div class="modal-content">
@@ -16,29 +16,29 @@
                                 <div class="custom-file">
                                   <input type="file" class="custom-file-input" name="logo.anexo" id="img-input" required>
                                   <input type="hidden" name="logo.tipo" value="LOGO">   
-                                  <label class="custom-file-label" for="customFile">Selecione o arquivo: (png, jpg, jpeg, bitmap)</label>
+                                  <label class="custom-file-label">Selecione o arquivo: (png, jpg, jpeg, bitmap)</label>
                                 </div>
                             </div>
                         </div>
                     </div>       
                     <div class="d-flex flex-row justify-content-center my-2">
                         <div class="col-12">
-                            <center>
-                                <img class="img-thumbnail" id="img-preview" src="https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png" alt="image preview"/ style="max-height: 300px;">
-                            </center>
+                            <div style="text-align: center;">
+                                <img class="img-thumbnail" id="img-preview" src="https://baladasegura.rs.gov.br/themes/modelo-institucional/images/outros/GD_imgSemImagem.png" alt="image preview" style="max-height: 300px;">
+                            </div>
                         </div>
                     </div>                       
                     <div class="row mt-5">
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Título:</label>
-                                <input type="text" class="form-control" name="titulo" placeholder="Nome do Projeto" required>     
+                                <label for="titulo">Título:</label>
+                                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Nome do Projeto" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Proponente:</label>
-                                <input type="text" class="form-control" name="proponente" placeholder="Proponente" required> 
+                                <label for="proponente">Proponente:</label>
+                                <input type="text" class="form-control" id="proponente" name="proponente" placeholder="Proponente" required>
                             </div> 
                         </div>  
                     </div>
@@ -46,14 +46,14 @@
                     <div class="row">
                         <div class="col-md-8 col-12">
                             <div class="form-group">
-                                <label>Cidade:</label>
-                                <input type="text" class="form-control" name="localidade.cidade" placeholder="Cidade" required>     
+                                <label for="cidade">Cidade:</label>
+                                <input type="text" class="form-control" id="cidade" name="localidade.cidade" placeholder="Cidade" required>
                             </div>
                         </div>
                         <div class="col-md-4 col-12">
                             <div class="form-group">
-                                <label>Estado:</label>
-                                <select class="form-control" name="localidade.estado" required>
+                                <label for="estado">Estado:</label>
+                                <select class="form-control" id="estado" name="localidade.estado" required>
                                     <option value="AC">Acre</option>
                                     <option value="AL">Alagoas</option>
                                     <option value="AP">Amapá</option>
@@ -89,8 +89,8 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="parceiros">Parceiros:</label></br>
-                                <input type="text" class="form-control" name="parceiros" data-role="tagsinput">
+                                <label for="parceiros">Parceiros:</label><br>
+                                <input type="text" class="form-control" id="parceiros" name="parceiros" data-role="tagsinput">
                             </div>
                         </div>
                     </div>     
@@ -98,14 +98,14 @@
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Beneficiários Direto:</label>
-                                <input type="number" class="form-control" name="beneficiariosDireto" placeholder="Qtd. Beneficiários Direto" required>     
+                                <label for ="beneficiariosDireto">Beneficiários Direto:</label>
+                                <input type="number" class="form-control" id="beneficiariosDireto" name="beneficiariosDireto" placeholder="Qtd. Beneficiários Direto" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Beneficiários Indireto:</label>
-                                <input type="number" class="form-control" name="beneficiariosIndireto" placeholder="Qtd. Beneficiários Indireto" required> 
+                                <label for="beneficiariosIndireto">Beneficiários Indireto:</label>
+                                <input type="number" class="form-control" id="beneficiariosIndireto" name="beneficiariosIndireto" placeholder="Qtd. Beneficiários Indireto" required>
                             </div> 
                         </div>  
                     </div>
@@ -113,13 +113,13 @@
                     <div class="row">
                          <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Valor Solicitado:</label>
+                                <label for="valorSolicitado">Valor Solicitado:</label>
                                 <input type="text" class="form-control" name="valorSolicitado" id="valorSolicitado" placeholder="R$ 100.000,00" required> 
                             </div> 
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="form-group">
-                                <label>Valor Total:</label>
+                                <label for="valorTotal">Valor Total:</label>
                                 <input type="text" class="form-control" name="valorTotal" id="valorTotal" placeholder="R$ 500.000,00" required> 
                             </div> 
                         </div>  
@@ -128,8 +128,8 @@
                     <div class="row">      
                         <div class="col-12">    
                              <div class="form-group">
-                                <label>Resumo:</label>
-                                <textarea class="form-control" name="resumo" rows="5" placeholder="Escreva o resumo do projeto em até 2.500 caracteres" maxlength="2500" required></textarea>
+                                <label for="resumo">Resumo:</label>
+                                <textarea class="form-control" id="resumo" name="resumo" rows="5" placeholder="Escreva o resumo do projeto em até 2.500 caracteres" maxlength="2500" required></textarea>
                             </div>   
                         </div>
                     </div>  
