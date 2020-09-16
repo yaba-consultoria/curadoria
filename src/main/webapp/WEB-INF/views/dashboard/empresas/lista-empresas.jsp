@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 <c:set var="context" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -13,17 +13,16 @@
     <meta name="author" content="">
 
     <title>Curadoria Yabá Consultoria - Clientes</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="${context}/images/favicon.png" type="image/x-icon">
 
-    <!-- Custom fonts for this template -->
+    <!-- Fontawesome -->
     <link href="${context}/dashboard/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="${context}/dashboard/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
+    <!-- Data Tables -->
     <link href="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
@@ -33,8 +32,9 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Import Sidebar -->
     <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -42,17 +42,16 @@
         <!-- Main Content -->
         <div id="content">
 
-            <!-- Topbar -->
+            <!-- Import Topbar -->
             <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
-            <!-- End of Topbar -->
+            <!-- End Import Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">                
+            <div class="container-fluid"> 
 
                 <div class="d-flex flex-row justify-content-between">
                     <h1 class="h3 mb-2 text-gray-800">Empresas</h1>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#modal-cadastro-empresa">Nova Empresa</button>
-                    
                 </div>
 
                 <!-- Alert Default -->
@@ -64,33 +63,33 @@
 
                 <!-- DataTales Example -->
                 <c:if test = "${not empty empresas}">
-                <div class="card shadow mb-4 mt-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Lista de Empresas</h6>
-                    </div>
-                    <div class="card-body">
-                        <c:if test = "${not empty empresas}"> 
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                        <th>CNPJ</th>
-                                    </tr>
-                                    </thead>                                    
-                                    <tbody>
-                                    <c:forEach var="empresa" items="${empresas}">
+                    <div class="card shadow mb-4 mt-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Lista de Empresas</h6>
+                        </div>
+                        <div class="card-body">
+                            <c:if test = "${not empty empresas}"> 
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable">
+                                        <thead>
                                         <tr>
-                                            <td>${empresa.nome}</td>
-                                            <td>${empresa.cnpj}</td>
+                                            <th>Nome</th>
+                                            <th>CNPJ</th>
                                         </tr>
-                                    </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </c:if>                        
+                                        </thead>                                    
+                                        <tbody>
+                                        <c:forEach var="empresa" items="${empresas}">
+                                            <tr>
+                                                <td>${empresa.nome}</td>
+                                                <td>${empresa.cnpj}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </c:if>                        
+                        </div>
                     </div>
-                </div>
                 </c:if>
                 <c:if test = "${empty empresas}"> 
                     <div class="alert alert-danger mt-4" role="alert">
@@ -120,13 +119,10 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Modal Cadastro Empresa -->
+<!-- Import Modal Cadastro Empresa -->
 <c:import url="/WEB-INF/views/componentes/modal/modal-cadastro-empresa.jsp" />
-
-<!-- Logout Modal-->
+<!-- Import Logout Modal-->
 <c:import url="/WEB-INF/views/componentes/modal/modal-logout.jsp" />
-
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="${context}/dashboard/vendor/jquery/jquery.min.js"></script>
@@ -143,12 +139,10 @@
 <script src="${context}/dashboard/vendor/jquery-mask/jquery.mask.js"></script>
 <script src="${context}/dashboard/vendor/jquery-mask/mask.js"></script>
 
-<!-- Page level plugins -->
+<!-- Data Table -->
 <script src="${context}/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="${context}/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="${context}/dashboard/js/demo/datatables-demo.js"></script>
+<script src="${context}/dashboard/js/demo/datatables-default.js"></script>
 
 </body>
 
