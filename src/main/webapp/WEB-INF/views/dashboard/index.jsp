@@ -30,7 +30,9 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
+    <!-- Import Sidebar -->
     <c:import url="/WEB-INF/views/componentes/sidebar/sidebar-dashboard.jsp" />
+    <!-- End Import Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -38,9 +40,9 @@
       <!-- Main Content -->
       <div id="content">
 
-        <!-- Topbar -->
+        <!-- Import Topbar -->
         <c:import url="/WEB-INF/views/componentes/topbar/topbar-dashboard.jsp" />
-        <!-- End of Topbar -->
+        <!-- End Import Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
